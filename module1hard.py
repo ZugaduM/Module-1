@@ -1,16 +1,16 @@
-grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
-students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
+grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]    # список оценок
+students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}                          # список учеников
 
-def srednyi_ball(name, marks):
-    name = sorted(name)
-    temp_mark = []
-    total_dict = {}
+def srednyi_ball(name, marks):                                                        # объявляем функцию, формирующую словарь
+    name = sorted(name)                                                               # сортируем учеников по алфавиту
+    temp_mark = []                                                                    # объявляем временный список для хранения среднего балла
+    total_dict = {}                                                                   # объявляем конечный словарь, в который будут занесены ученики с их средним баллом
 
-    for i in range(len(name)):
-         temp_mark = sum(marks[i]) / len(marks[i])
-         total_dict.update({name[i]: round(temp_mark, 2)})
+    for i in range(len(name)):                                                        # создаем цикл for для наполнения словаря
+         temp_mark = sum(marks[i]) / len(marks[i])                                    # вычисляем средний бал для каждого ученика
+         total_dict.update({name[i]: round(temp_mark, 2)})                            # обновляем словарь, добавляя в него пару (ученик: средний балл) при каждой итерации цикла
 
-    return total_dict 
+    return total_dict                                                                 # возвращаем сформированный словарь
 
 
-print(srednyi_ball(students, grades))
+print(srednyi_ball(students, grades))                                                 # вызываем нашу функцию, получаем результат в консоль
